@@ -1,5 +1,5 @@
 package com.test;
-
+import java.util.*;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
@@ -200,6 +200,14 @@ public class Oauth2callback {
 		List<AddJdo> results = (List<AddJdo>) q.execute();
 		Gson gson = new Gson();
 
+		// sort testing
+		HashSet<List> hset=new HashSet<List>();  
+        hset.add(results);	
+        results.clear();
+        results.addAll(results);
+    
+         System.out.println("checking hashset" +results);	
+         // end sort testin
 		return gson.toJson(results);
 
 	}
